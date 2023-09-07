@@ -4,6 +4,8 @@ import { CreateAccountController } from './controllers/create-account.controller
 import { ConfigModule } from '@nestjs/config'
 import { envSchema } from './env'
 import { AuthModule } from './auth/auth.module'
+import { AuthenticationController } from './controllers/authenticate.controller'
+import { JwtService } from '@nestjs/jwt'
 
 @Module({
   imports: [
@@ -13,7 +15,7 @@ import { AuthModule } from './auth/auth.module'
     }),
     AuthModule,
   ],
-  controllers: [CreateAccountController],
+  controllers: [CreateAccountController, AuthenticationController],
   providers: [PrismaService],
 })
 export class AppModule {}
