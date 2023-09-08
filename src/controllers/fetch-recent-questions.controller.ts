@@ -22,7 +22,7 @@ export class FetchRecentQuestionsController {
   @Get()
   @UseGuards(JwtAuthGuard)
   async handle(@Query('page', queryValidationPipe) page: PageQueryParamSchema) {
-    const perPage = 2
+    const perPage = 20
 
     const questions = await this.prisma.question.findMany({
       orderBy: {
@@ -32,6 +32,6 @@ export class FetchRecentQuestionsController {
       skip: (page - 1) * perPage,
     })
 
-    return questions
+    return { questions }
   }
 }
