@@ -8,5 +8,6 @@
     "**/Thumbs.db": true,
     "**/*.crswap": true,
     "**/node_modules": true
-  }
+  },
+  "material-icon-theme.activeIconPack": "nest"
 }

@@ -31,6 +31,13 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "title": "Minha pergunta",
+  "title": "Como criar uma API Rest usando NestJS?",
   "content": "Pergunta teste"
 }
+
+###
+
+# @name fetch_recent_questions
+GET {{baseUrl}}/questions?page=1
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
